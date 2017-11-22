@@ -1,6 +1,7 @@
 package com.example.ruslan.diamond.ui;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 
 import java.util.List;
@@ -15,4 +16,5 @@ public interface MainActivityInterface {
     public void startPayPalService(Intent intent);
     public void stopPayPalService(Intent intent);
     public void showMessageToUser(AlertDialog alertDialog);
+    Context getContext();
 }

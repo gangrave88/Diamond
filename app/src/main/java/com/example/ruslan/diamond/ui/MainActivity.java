@@ -1,6 +1,7 @@
 package com.example.ruslan.diamond.ui;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
     }
 
     public void clickPayButton(){
-        presenter.pressPay(sum.getText().toString());
+        presenter.pressPay(sum.getText().toString(),carat,clarity,Integer.valueOf(amount),Integer.valueOf(weight), "");
     }
 
     @Override
@@ -150,5 +151,10 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
         super.onActivityResult(requestCode, resultCode, data);
 
         presenter.resultFromPayPal(requestCode,resultCode,data);
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 }
